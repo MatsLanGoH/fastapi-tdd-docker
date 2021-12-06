@@ -12,7 +12,7 @@ ENV PATH="${PATH}:/root/.poetry/bin"
 
 # Copy only requirements to cache them in docker layer
 WORKDIR /usr/src/app
-COPY poetry.lock pyproject.toml /usr/src/app/
+COPY ./poetry.lock ./pyproject.toml /usr/src/app/
 
 # Project initialization
 RUN poetry config virtualenvs.create false \
