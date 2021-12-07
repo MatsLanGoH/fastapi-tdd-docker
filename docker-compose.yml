@@ -2,10 +2,10 @@ version: '3.8'
 
 services:
   web:
-    build: ./project
+    build: fastapi-tdd-docker
     command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
     volumes:
-      - ./project:/usr/src/app
+      - ./fastapi-tdd-docker:/usr/src/app
     ports:
       - "8004:8000"
     environment:
@@ -17,7 +17,7 @@ services:
       - web-db
   web-db:
     build:
-      context: ./project/db
+      context: fastapi-tdd-docker/db
       dockerfile: Dockerfile
     expose:
       - 5432

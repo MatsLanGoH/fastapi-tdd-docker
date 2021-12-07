@@ -211,11 +211,11 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
+# Spyder fastapi-tdd-docker settings
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope fastapi-tdd-docker settings
 .ropeproject
 
 # mkdocs documentation

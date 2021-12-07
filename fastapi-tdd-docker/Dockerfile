@@ -18,7 +18,7 @@ COPY ./poetry.lock ./pyproject.toml /usr/src/app/
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
-# Creating folders and files for project
+# Creating folders and files for fastapi-tdd-docker
 COPY . .
 
 COPY ./entrypoint.sh .
