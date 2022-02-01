@@ -1,6 +1,6 @@
 import json
-import pytest
 
+import pytest
 from starlette.status import (
     HTTP_200_OK,
     HTTP_201_CREATED,
