@@ -3,6 +3,7 @@
 /summaries/:id  GET     get a single summary
 /summaries      POST    add a summary
 """
+from typing import List
 
 from fastapi import APIRouter, HTTPException
 from starlette.status import HTTP_201_CREATED, HTTP_404_NOT_FOUND
@@ -31,7 +32,7 @@ async def create_summary(payload: SummaryPayloadSchema) -> SummaryResponseSchema
 
 
 @router.get(
-    "/{id}",
+    "/{id}/",
     response_model=SummarySchema,
 )
 async def read_summary(id: int) -> SummarySchema:
@@ -43,3 +44,11 @@ async def read_summary(id: int) -> SummarySchema:
         )
 
     return summary
+
+
+@router.get(
+    "/",
+    response_model=List[SummarySchema],
+)
+async def read_all_summaries() -> List[SummarySchema]:
+    return await crud.get_all()
