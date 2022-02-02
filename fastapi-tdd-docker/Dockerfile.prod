@@ -28,7 +28,7 @@ RUN pip install -U pip \
 ENV PATH="${PATH}:/root/.poetry/bin"
 
 # install python dependencies
-#WORKDIR /usr/src/app
+WORKDIR /usr/src/app
 COPY ./poetry.lock ./pyproject.toml $APP_HOME
 
 # install python dependencies

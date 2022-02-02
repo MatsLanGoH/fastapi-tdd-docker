@@ -54,7 +54,7 @@ jobs:
           docker build \
             --cache-from ${{ env.IMAGE }}:latest \
             --tag ${{ env.IMAGE }}:latest \
-            --file ./Dockerfile.prod \
+            --file ./fastapi-tdd-docker/Dockerfile.prod \
             "."
       - name: Run container
         run: | 
